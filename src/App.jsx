@@ -77,17 +77,21 @@ function App() {
         //flip back card 1, card 2
 
         setTimeout(() => {
+          
+          const flippedBackCard = newCards.map((c) => {
+            if (newFlippedCards.includes(c.id || c.id === card.id)) {
+              return {...c,isFlipped: false };
+            } else {
+              return c;
+            }
+          });
 
-        }, 1000)
+          setCards(flippedBackCard);
+          
+          setFlippedCards([]);
 
-        const flippedBackCard = newCards.map((c) => {
-          if (newFlippedCards.includes(c.id || c.id === card.id)) {
-            return {...c,isFlipped: false };
-          } else {
-            return c;
-          }
-        });
-        setCards(flippedBackCard);
+        }, 1000);
+
       }
     }
   };
