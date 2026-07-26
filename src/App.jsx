@@ -76,6 +76,10 @@ function App() {
 
         //flip back card 1, card 2
 
+        setTimeout(() => {
+
+        }, 1000)
+
         const flippedBackCard = newCards.map((c) => {
           if (newFlippedCards.includes(c.id || c.id === card.id)) {
             return {...c,isFlipped: false };
