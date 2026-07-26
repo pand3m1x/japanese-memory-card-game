@@ -84,7 +84,16 @@ function App() {
           }
         });
         
-        setCards(newMatchedCards);
+        setCards((prev) =>
+          prev.map((c) => {
+          if (c.id === card.id || firstCard.id ) {
+            return {...c, isMatched: true };
+          } else {
+            return c;
+          }
+        })
+      );
+
         setFlippedCards([]);
       }, 500 );
       } else {
