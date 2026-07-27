@@ -30,12 +30,21 @@ function App() {
   const [moves, setMoves] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
 
+  const shuffleArray = (array) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  }
+
   const initializeGame = () => {
     // SHUFFLE THE CARDS
 
-    console.log(cardValues)
-
-    const finalCards = cardValues.map(( value, index ) => ({
+    const shuffledArray = shuffleArray(cardValues);
+    
+    const finalCards = shuffledArray.map(( value, index ) => ({
       id: index,
       value, 
       isFlipped: false,
