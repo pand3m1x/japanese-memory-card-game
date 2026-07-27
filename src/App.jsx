@@ -133,11 +133,12 @@ function App() {
     }
   };
 
+  const isGameComplete = matchedCards.length === cardValues.length;
   return (
     <div className="app"> 
       <GameHeader score={score} moves={moves} onReset={initializeGame}/>
 
-      <WinMessage moves={moves} />
+      {isGameComplete && <WinMessage moves={moves} />}
       <div className="cards-grid">
         {cards.map((card)=> (
           <Card card={card} onClick={handleCardClick}/>
