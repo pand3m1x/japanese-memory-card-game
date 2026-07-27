@@ -77,7 +77,7 @@ function App() {
         setMatchedCards((prev) => [ ...prev, firstCard.id, card.id ]);
 
           const newMatchedCards = cards.map((c) => {
-          if (c.id === card.id || firstCard.id ) {
+          if (c.id === card.id || c.id === firstCard.id ) {
             return {...c, isMatched: true };
           } else {
             return c;
@@ -86,7 +86,7 @@ function App() {
         
         setCards((prev) =>
           prev.map((c) => {
-          if (c.id === card.id || firstCard.id ) {
+          if (c.id === card.id || c.id === firstCard.id ) {
             return {...c, isMatched: true };
           } else {
             return c;
@@ -102,7 +102,7 @@ function App() {
 
         setTimeout(() => {
           const flippedBackCard = newCards.map((c) => {
-            if (newFlippedCards.includes(c.id || c.id === card.id)) {
+            if (newFlippedCards.includes( c.id )) {
               return {...c,isFlipped: false };
             } else {
               return c;
