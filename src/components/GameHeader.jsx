@@ -15,6 +15,7 @@ export const GameHeader = ({ score, moves }) => {
         <span  className="stat-value">{moves}</span>
       </div>
     </div>
+    <button></button>
   </div>
   );
 };
