@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { buildDeck } from "../utils/buildDeck.js";
 
-export const useGameLogic = (cardValues) => {
-
+export const useGameLogic = (categoryArray, pairCount = 8) => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -9,23 +9,11 @@ export const useGameLogic = (cardValues) => {
   const [moves, setMoves] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
 
-  const shuffleArray = (array) => {
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-    }
-    return shuffledArray;
-  }
-
   const initializeGame = () => {
-    // SHUFFLE THE CARDS
-
-    const shuffledArray = shuffleArray(cardValues);
-    
-    const finalCards = shuffledArray.map(( value, index ) => ({
+    const deck = buildDeck(categoryArray, pairCount);
+    const finalCards = deck.map((cardData, index) => ({
       id: index,
-      value, 
+      ...cardData,
       isFlipped: false,
       isMatched: false,
     }));
@@ -38,70 +26,48 @@ export const useGameLogic = (cardValues) => {
     setMatchedCards([]);
   };
 
-    useEffect(() => {
-      initializeGame();
-    }, []);
+  useEffect(() => {
+    initializeGame();
+  }, []);
 
   const handleCardClick = (card) => {
-    // Don't allow clicking if card is already flipped, matched
-
-    if(card.isFlipped || card.isMatched || isLocked || flippedCards.length === 2) {
+    if (card.isFlipped || card.isMatched || isLocked || flippedCards.length === 2) {
       return;
     }
-    console.log("Card clicked: ", card);
 
-    // update card flipped state
-    const newCards = cards.map((c) => {
-      if (c.id === card.id) {
-        return {...c, isFlipped: true };
-      } else {
-        return c;
-      }
-    });
-
+    const newCards = cards.map((c) =>
+      c.id === card.id ? { ...c, isFlipped: true } : c
+    );
     setCards(newCards);
 
-    const newFlippedCards = [...flippedCards, card.id]
+    const newFlippedCards = [...flippedCards, card.id];
     setFlippedCards(newFlippedCards);
 
-    //check for match if two cards are flipped
     if (flippedCards.length === 1) {
       setIsLocked(true);
-      const firstCard = cards.find(c => c.id === flippedCards[0])
-      
-      if (firstCard.value === card.value) {
-        setTimeout(() => {
-        setMatchedCards((prev) => [ ...prev, firstCard.id, card.id ]);
-        setScore((prev) => prev + 1);
-        setCards((prev) =>
-          prev.map((c) => {
-          if (c.id === card.id || c.id === firstCard.id ) {
-            return {...c, isMatched: true };
-          } else {
-            return c;
-          }
-        })
-       
-      );
+      const firstCard = cards.find((c) => c.id === flippedCards[0]);
 
-        setFlippedCards([]);
-        setIsLocked(false);
-      }, 500 );
+      if (firstCard.vocabId === card.vocabId) {
+        setTimeout(() => {
+          setMatchedCards((prev) => [...prev, firstCard.id, card.id]);
+          setScore((prev) => prev + 1);
+          setCards((prev) =>
+            prev.map((c) =>
+              c.id === card.id || c.id === firstCard.id
+                ? { ...c, isMatched: true }
+                : c
+            )
+          );
+          setFlippedCards([]);
+          setIsLocked(false);
+        }, 500);
       } else {
-
-        //flip back card 1, card 2
-
         setTimeout(() => {
-          const flippedBackCard = newCards.map((c) => {
-            if (newFlippedCards.includes( c.id )) {
-              return {...c,isFlipped: false };
-            } else {
-              return c;
-            }
-          });
-
-          setCards(flippedBackCard);
-
+          setCards((prev) =>
+            prev.map((c) =>
+              newFlippedCards.includes(c.id) ? { ...c, isFlipped: false } : c
+            )
+          );
           setFlippedCards([]);
           setIsLocked(false);
         }, 1000);
@@ -111,12 +77,7 @@ export const useGameLogic = (cardValues) => {
     }
   };
 
-  const isGameComplete = matchedCards.length === cardValues.length;
+  const isGameComplete = cards.length > 0 && matchedCards.length === cards.length;
 
-  return { cards,
-           score,
-           moves,
-           isGameComplete,
-           initializeGame,
-           handleCardClick,}
-}
+  return { cards, score, moves, isGameComplete, initializeGame, handleCardClick };
+};

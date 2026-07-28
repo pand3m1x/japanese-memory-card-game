@@ -4,25 +4,26 @@ import { WinMessage } from "./components/WinMessage.jsx"
 
 
 import { useGameLogic } from "./hooks/useGameLogic.js";
+import { clothingCategory } from "./vocab-categories/clothingCategory.js";
 
-const cardValues = [
-  "👓",
-  "👜",
-  "👙",
-  "👚",
-  "🥾",
-  "👠",
-  "👑",
-  "🧥",
-  "👓",
-  "👜",
-  "👙",
-  "👚",
-  "🥾",
-  "👠",
-  "👑",
-  "🧥"
-]
+// const cardValues = [
+//   "👓",
+//   "👜",
+//   "👙",
+//   "👚",
+//   "🥾",
+//   "👠",
+//   "👑",
+//   "🧥",
+//   "👓",
+//   "👜",
+//   "👙",
+//   "👚",
+//   "🥾",
+//   "👠",
+//   "👑",
+//   "🧥"
+// ]
 
 // new card array values for clothing cards
 
@@ -66,7 +67,8 @@ const cardValues = [
 
 function App() {
 
-const { cards, score, moves, handleCardClick, initializeGame, isGameComplete} = useGameLogic(cardValues)
+const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
+  useGameLogic(clothingCategory, 8);
 
   return (
     <div className="app"> 
