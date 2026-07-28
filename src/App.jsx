@@ -74,8 +74,8 @@ const { cards, score, moves, handleCardClick, initializeGame, isGameComplete} = 
 
       {isGameComplete && <WinMessage moves={moves} />}
       <div className="cards-grid">
-        {cards.map((card)=> (
-          <Card card={card} onClick={handleCardClick}/>
+        {cards.map((card) => (
+          <Card key={card.id} card={card} onClick={handleCardClick}/>
         ))}
       </div>
       <p>Follow Along code: Pedro Tech</p>

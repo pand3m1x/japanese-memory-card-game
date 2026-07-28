@@ -67,7 +67,7 @@ export const useGameLogic = (cardValues) => {
     //check for match if two cards are flipped
     if (flippedCards.length === 1) {
       setIsLocked(true);
-      const firstCard = cards[flippedCards[0]]
+      const firstCard = cards.find(c => c.id === flippedCards[0])
       
       if (firstCard.value === card.value) {
         setTimeout(() => {

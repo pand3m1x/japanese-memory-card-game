@@ -1,6 +1,7 @@
 
 
 export const GameHeader = ({ score, moves, onReset }) => {
+  
   return (
   
   <div className="game-header">
