@@ -3,7 +3,8 @@
 // new card array values for clothing cards
 
 
-export const clothingCardValues = [ 
+export const clothingCategory = [ 
+
 {id: "c1", emoji: "👓", wordJP:"メガネ"},
 {id: "c2", emoji: "👜", wordJP:"てにもつ"},
 {id: "c3", emoji: "🩱", wordJP:"みずぎ"},
@@ -11,7 +12,7 @@ export const clothingCardValues = [
 {id: "c5", emoji: "🥾", wordJP:"ブーツ"},
 {id: "c6", emoji: "👠", wordJP:"スパイクヒール"},
 {id: "c7", emoji: "👑", wordJP:"おうかん"},
-{id: "c8", emoji: "🧥", wordJP:"うわぎ/コート"},
+{id: "c8", emoji: "🧥", wordJP:"コート"},
 {id:"c9", emoji: "🌂", wordJP:"かさ"},
 {id:"c10", emoji: "🕶", wordJP:"サングラス"},
 {id:"c11", emoji: "🧦", wordJP:"くつした"},
@@ -31,11 +32,12 @@ export const clothingCardValues = [
 {id:"c25", emoji: "👘", wordJP:"きもの"},
 {id:"c26", emoji: "👗", wordJP:"ドレス"},
 {id:"c27", emoji: "🧤", wordJP:"てぶくろ"},
-{id:"c28", emoji: "🎒", wordJP:"バックパック/リュックサック"},
+{id:"c28", emoji: "🎒", wordJP:"リュックサック"},
 {id:"c29", emoji: "🩲", wordJP:"したぎ"},
 {id:"c30", emoji: "👝", wordJP:"さいふ"},
 {id:"c31", emoji: "🎀", wordJP:"ボウタイ"},
 {id:"c32", emoji: "🎧", wordJP:"ヘッド・フォン"},
 {id:"c33", emoji: "⌚", wordJP:"うでどけい"},
 {id:"c34", emoji: "📿", wordJP:"じゅず"},
+
 ]

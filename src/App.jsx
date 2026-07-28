@@ -6,69 +6,12 @@ import { WinMessage } from "./components/WinMessage.jsx"
 import { useGameLogic } from "./hooks/useGameLogic.js";
 import { clothingCategory } from "./vocab-categories/clothingCategory.js";
 
-// const cardValues = [
-//   "👓",
-//   "👜",
-//   "👙",
-//   "👚",
-//   "🥾",
-//   "👠",
-//   "👑",
-//   "🧥",
-//   "👓",
-//   "👜",
-//   "👙",
-//   "👚",
-//   "🥾",
-//   "👠",
-//   "👑",
-//   "🧥"
-// ]
 
-// new card array values for clothing cards
-
-
-// const clothingCardValues = [ 
-// {id: "c1", emoji: "👓", wordJP:"メガネ"},
-// {id: "c2", emoji: "👜", wordJP:"てにもつ"},
-// {id: "c3", emoji: "🩱", wordJP:"みずぎ"},
-// {id: "c4", emoji: "👚", wordJP:"ブラウス"},
-// {id: "c5", emoji: "🥾", wordJP:"ブーツ"},
-// {id: "c6", emoji: "👠", wordJP:"スパイクヒール"},
-// {id: "c7", emoji: "👑", wordJP:"おうかん"},
-// {id: "c8", emoji: "🧥", wordJP:"うわぎ/コート"},
-// {id:"c9", emoji: "🌂", wordJP:"かさ"},
-// {id:"c10", emoji: "🕶", wordJP:"サングラス"},
-// {id:"c11", emoji: "🧦", wordJP:"くつした"},
-// {id:"c12", emoji: "👙", wordJP:"ビキニ"},
-// {id:"c13", emoji: "👒", wordJP:"なつぼうし"},
-// {id:"c14", emoji: "💍", wordJP:"ゆびわ"},
-// {id:"c15", emoji: "💼", wordJP:"スーツケース"},
-// {id:"c16", emoji: "👟", wordJP:"スニーカー"},
-// {id:"c17", emoji: "👞", wordJP:"くつ"},
-// {id:"c18", emoji: "🧢", wordJP:"ぼうし"},
-// {id:"c19", emoji: "👛", wordJP:"ぜにぶくろ"},
-// {id:"c20", emoji: "🧣", wordJP:"マフラー"},
-// {id:"c21", emoji: "🩳", wordJP:"すいえいパンツ"},
-// {id:"c22", emoji: "👔", wordJP:"シャツ"},
-// {id:"c23", emoji: "👖", wordJP:"ズボン"},
-// {id:"c24", emoji: "👕", wordJP:"Ｔシャツ"},
-// {id:"c25", emoji: "👘", wordJP:"きもの"},
-// {id:"c26", emoji: "👗", wordJP:"ドレス"},
-// {id:"c27", emoji: "🧤", wordJP:"てぶくろ"},
-// {id:"c28", emoji: "🎒", wordJP:"バックパック/リュックサック"},
-// {id:"c29", emoji: "🩲", wordJP:"したぎ"},
-// {id:"c30", emoji: "👝", wordJP:"さいふ"},
-// {id:"c31", emoji: "🎀", wordJP:"ボウタイ"},
-// {id:"c32", emoji: "🎧", wordJP:"ヘッド・フォン"},
-// {id:"c33", emoji: "⌚", wordJP:"うでどけい"},
-// {id:"c34", emoji: "📿", wordJP:"じゅず"},
-// ]
 
 function App() {
 
 const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
-  useGameLogic(clothingCategory, 8);
+  useGameLogic( clothingCategory, 8 );
 
   return (
     <div className="app"> 
