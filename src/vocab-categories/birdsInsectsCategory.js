@@ -24,4 +24,4 @@ export const birdsInsectsCategory = [
 {id:"ib21", emoji: "🦅", wordJP:"わし", kanji:"鷲"},
 {id:"ib22", emoji: "🦉", wordJP:"ふくろう", kanji:"梟"},
 
-]kanji:""
+]
