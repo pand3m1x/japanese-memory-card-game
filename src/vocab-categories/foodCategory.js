@@ -1,0 +1,29 @@
+export const landAnimalsCategory = [ 
+
+{id: "la1", emoji: "🍎", wordJP:"いぬ"},
+{id: "la2", emoji: "🍐", wordJP:"ねこ"},
+{id: "la3", emoji: "🍊", wordJP:"ネズミ"},
+{id: "la4", emoji: "🍋", wordJP:"ハムスター"},
+{id: "la5", emoji: "🍉", wordJP:"ウサギ"},
+{id: "la6", emoji: "🍇", wordJP:"キツネ"},
+{id: "la7", emoji: "🍓", wordJP:"くま"},
+{id: "la8", emoji: "🍈", wordJP:"パンダ"},
+{id:"la9", emoji: "🍒", wordJP:"コアラ"},
+{id:"la10", emoji: "🍑", wordJP:"とら"},
+{id:"la11", emoji: "🥭", wordJP:"ライオン"},
+{id:"la12", emoji: "🍍", wordJP:"うし"},
+{id:"la13", emoji: "🥥", wordJP:"ライオン"},
+{id:"la14", emoji: "🐸", wordJP:"かえる"},
+{id:"la15", emoji: "🐵", wordJP:"さる"},
+{id:"la16", emoji: "🦇", wordJP:"こうもり"},
+{id:"la17", emoji: "🐺", wordJP:"おおかみ"},
+{id:"la18", emoji: "🐗", wordJP:"いのしし"},
+{id:"la19", emoji: "🐴", wordJP:"うま"},
+{id:"la20", emoji: "🦦", wordJP:"かわうそ"},
+{id:"la21", emoji: "🦔", wordJP:"やまあらし"},
+{id:"la22", emoji: "🐘", wordJP:"ぞう"},
+]
+
+🥝🍅🍆🥑🥦🥬🥒🌶🌽🥕🧄🧅🍌
+🥔🍠🥐🥯🍞🥖🥨🧀🥚🍳🧈🥞🧇🥓🥩🍗
+🍖🦴🌭🍔🍟🍕🥪🥙🧆🌮🌯🥗🥘🥫🍝
