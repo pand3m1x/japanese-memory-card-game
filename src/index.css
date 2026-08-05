@@ -144,7 +144,26 @@ body {
   }
 }
 
+.win-message button{
+  background: linear-gradient(135deg, var(--warm-gray) 0%, var(--dark-warm-gray) 100%);
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
 
+#play-reset-buttons {
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 5px;
+}
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
