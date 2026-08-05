@@ -35,8 +35,8 @@ export const groceryCategory = [
 {id:"g33", emoji: "🧀", wordJP:"チーズ", kanji:"チーズ"},
 {id:"g34", emoji: "🥓", wordJP:"ベーコン", kanji:"ベーコン"},
 {id:"g35", emoji: "🥫", wordJP:"かんづめ", kanji:"缶詰"},
-{id:"g33", emoji: "🍯", wordJP:"はちみつ", kanji:"蜂蜜"},
-{id:"g34", emoji: "🍼", wordJP:"じんこうにゅう", kanji:"人工乳"},
-{id:"g35", emoji: "🍚", wordJP:"こめ", kanji:"米"},
+{id:"g36", emoji: "🍯", wordJP:"はちみつ", kanji:"蜂蜜"},
+{id:"g37", emoji: "🍼", wordJP:"じんこうにゅう", kanji:"人工乳"},
+{id:"g38", emoji: "🍚", wordJP:"こめ", kanji:"米"},
 
 ]

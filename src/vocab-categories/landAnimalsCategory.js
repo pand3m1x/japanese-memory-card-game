@@ -12,7 +12,7 @@ export const landAnimalsCategory = [
 {id:"la10", emoji: "🐯", wordJP:"とら", kanji:""},
 {id:"la11", emoji: "🦁", wordJP:"ライオン", kanji:""},
 {id:"la12", emoji: "🐮", wordJP:"うし", kanji:""},
-{id:"la13", emoji: "🐷", wordJP:"ライオン", kanji:""},
+{id:"la13", emoji: "🐷", wordJP:"ぶた", kanji:""},
 {id:"la14", emoji: "🐸", wordJP:"かえる", kanji:""},
 {id:"la15", emoji: "🐵", wordJP:"さる", kanji:""},
 {id:"la16", emoji: "🦇", wordJP:"こうもり", kanji:""},
