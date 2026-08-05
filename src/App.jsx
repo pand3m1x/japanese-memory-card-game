@@ -17,7 +17,10 @@ const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
     <div className="app"> 
       <GameHeader score={score} moves={moves} onReset={initializeGame}/>
 
-      {isGameComplete && <WinMessage moves={moves} />}
+      {isGameComplete && (<WinMessage 
+                          moves={moves} 
+                          onPlayAgain={initializeGame}
+                          onPickNewCategory={() => console.log("category picker: not built yet")} />)}
       <div className="cards-grid">
         {cards.map((card) => (
           <Card key={card.id} card={card} onClick={handleCardClick}/>

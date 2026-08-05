@@ -107,63 +107,6 @@ body {
 .reset-btn:active {
   transform: translateY(0);
 }
-
-
-.win-message h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.win-message p {
-  font-size: 1.2rem;
-  color: var(--off-white);
-}
-.win-message {
-  position: fixed;
-  top: 10%;
-  left: 37%;
-  background: var(--red-color);
-  color: var(--off-white);
-  padding: 30px 50px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 30px var(--shadow);
-  border: 1px solid var(--off-white);
-  z-index: 1000;
-  animation: slideDown 0.5s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.win-message button{
-  background: linear-gradient(135deg, var(--warm-gray) 0%, var(--dark-warm-gray) 100%);
-  color: white;
-  border: none;
-  padding: 7px 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px var(--shadow);
-}
-
-#play-reset-buttons {
-   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  margin: 10px 5px;
-}
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -243,6 +186,64 @@ body {
 
 .card:active:not(.matched) {
   transform: scale(0.95);
+}
+
+
+
+.win-message h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.win-message p {
+  font-size: 1.2rem;
+  color: var(--off-white);
+}
+.win-message {
+  position: fixed;
+  top: 10%;
+  left: 37%;
+  background: var(--red-color);
+  color: var(--off-white);
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px var(--shadow);
+  border: 1px solid var(--off-white);
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.win-message button{
+  background: linear-gradient(135deg, var(--warm-gray) 0%, var(--dark-warm-gray) 100%);
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+#play-reset-buttons {
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 5px;
 }
 
 @media (max-width: 768px) {
