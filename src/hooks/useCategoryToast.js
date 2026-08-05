@@ -1,27 +1,20 @@
 import { useState } from "react"
 
+const DEFAULT_CATEGORY = "clothing";
+
 export function useCategoryToast() {
 
-  const [ categorySelect, setCategorySelect ] = useState(0)
-  const [ isOpen, setIsOpen ] = useState(0)
-  const [ closeToast, setCloseToast ] = useState(0)
-  
+  const [isOpen, setIsOpen] = useState(true); // true on mount = shows every page load
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState(defaultCategory);
 
-  return (
-    <>
-      <div className="category-toast-container">
-        <div className="category-grid">
-          <div className="category-card">
-            <p>Clothing/Accessories</p>
-          </div>
-          <div className="category-card">
-            <p>Land Animals</p>
-          </div>
-          <div className="category-card">
-            <p>Grocery Category</p>
-          </div>
-        </div>
-      </div>
-    </>
-  )
+  const openToast = () => setIsOpen(true);
+  const closeToast = () => setIsOpen(false);
+
+  const selectCategory = (key) => {
+    setSelectedCategoryKey(key);
+    setIsOpen(false);
+  }
+
+  return { isOpen, selectedCategoryKey, openToast, closeToast, selectCategory }
+  
 }
