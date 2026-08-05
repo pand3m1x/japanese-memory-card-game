@@ -3,6 +3,9 @@ import { useState } from "react"
 export function useCategoryToast() {
 
   const [ categorySelect, setCategorySelect ] = useState(0)
+  const [ isOpen, setIsOpen ] = useState(0)
+  const [ closeToast, setCloseToast ] = useState(0)
+  
 
   return (
     <>
