@@ -1,34 +1,23 @@
-import { GameHeader } from "./components/GameHeader.jsx";
-import { Card } from "./components/Card.jsx";
-import { WinMessage } from "./components/WinMessage.jsx"
+import { useState } from 'react';
+import { CategoryPage } from './pages/CategoryPage';
+import { GamePage } from './pages/GamePage';
 
+function gameApp() {
 
-import { useGameLogic } from "./hooks/useGameLogic.js";
-import { clothingCategory } from "./vocab-categories/clothingCategory.js";
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState(null);
 
-
-
-function App() {
-
-const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
-  useGameLogic( clothingCategory, 8 );
+  if (!selectedCategoryKey) {
+    return <CategoryPage onSelect={setSelectedCategoryKey} />;
+  }
 
   return (
-    <div className="app"> 
-      <GameHeader score={score} moves={moves} onReset={initializeGame}/>
-
-      {isGameComplete && (<WinMessage 
-                          moves={moves} 
-                          onPlayAgain={initializeGame}
-                          onPickNewCategory={() => console.log("category picker: not built yet")} />)}
-      <div className="cards-grid">
-        {cards.map((card) => (
-          <Card key={card.id} card={card} onClick={handleCardClick}/>
-        ))}
-      </div>
-      <p>Follow Along code: Pedro Tech</p>
+    <div> 
+      <GamePage
+        categoryKey={selectedCategoryKey}
+        onPickNewCategory={() => setSelectedCategoryKey(null)}
+      />
     </div>
   )
 }
 
-export default App
+export default gameApp

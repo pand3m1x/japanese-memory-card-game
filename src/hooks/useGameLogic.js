@@ -28,7 +28,8 @@ export const useGameLogic = (categoryArray, pairCount = 8) => {
 
   useEffect(() => {
     initializeGame();
-  }, []);
+    //I can clear out the category Array now that the code has changed?
+  }, [ categoryArray ]);
 
   const handleCardClick = (card) => {
     if (card.isFlipped || card.isMatched || isLocked || flippedCards.length === 2) {

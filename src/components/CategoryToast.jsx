@@ -1,20 +1,24 @@
+import { categoryRegistry } from "../vocab-categories/categoryRegistry.js";
 
+export const CategoryToast = ({ isOpen, onSelect }) => {
 
-export default CategoryToast = () => {
+  if (!isOpen) return null;
 
   return(
+
   <>
     <div className="category-toast-container">
       <div className="category-grid">
-        <div className="category-card">
-          <p>Clothing/Accessories</p>
-        </div>
-        <div className="category-card">
-          <p>Land Animals</p>
-        </div>
-        <div className="category-card">
-          <p>Grocery Category</p>
-        </div>
+
+        {Object.entries(categoryRegistry).map(([ key, { label } ]) => (
+          <div
+            key={ key }
+            className="category-card"
+            onClick={ () => onSelect(key) } >
+            <p>{ label }</p>
+          </div>
+        ))}
+
       </div>
     </div>
  </>
