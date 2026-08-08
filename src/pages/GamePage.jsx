@@ -15,16 +15,20 @@ export const GamePage = ({ categoryKey, onPickNewCategory }) => {
     useGameLogic( categoryData, 8 );
 
   return (
-    <div className="game-app"> 
-      <GameHeader score={score} moves={moves} onReset={initializeGame}/>
+    <div className="app">
+      <GameHeader score={score} moves={moves} onReset={initializeGame} />
 
-      {isGameComplete && (<WinMessage 
-                          moves={moves} 
-                          onPlayAgain={initializeGame}
-                          onPickNewCategory={() => console.log("category picker: not built yet")} />)}
+      {isGameComplete && (
+        <WinMessage
+          moves={moves}
+          onPlayAgain={initializeGame}
+          onPickNewCategory={onPickNewCategory}
+        />
+      )}
+
       <div className="cards-grid">
         {cards.map((card) => (
-          <Card key={card.id} card={card} onClick={handleCardClick}/>
+          <Card key={card.id} card={card} onClick={handleCardClick} />
         ))}
       </div>
     </div>
