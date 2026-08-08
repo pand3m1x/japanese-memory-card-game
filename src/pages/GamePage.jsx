@@ -4,14 +4,15 @@ import { WinMessage } from "../components/WinMessage.jsx"
 
 
 import { useGameLogic } from "../hooks/useGameLogic.js";
-import { clothingCategory } from "../vocab-categories/clothingCategory.js";
+import { categoryRegistry } from "../vocab-categories/categoryRegistry.js";
 
 
 
-function gameApp() {
+export const GamePage = ({ categoryKey, onPickNewCategory }) => {
+ const categoryData = categoryRegistry[categoryKey].data;
 
-const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
-  useGameLogic( clothingCategory, 8 );
+  const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
+    useGameLogic( categoryData, 8 );
 
   return (
     <div className="game-app"> 
@@ -30,4 +31,3 @@ const { cards, score, moves, handleCardClick, initializeGame, isGameComplete } =
   )
 }
 
-export default gameApp

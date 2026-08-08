@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CategoryPage } from './pages/CategoryPage';
-import { GamePage } from './pages/GamePage';
+import { CategoryPage } from './pages/CategoryPage.jsx';
+import { GamePage } from './pages/GamePage.jsx';
 
 function gameApp() {
 
